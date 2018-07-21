@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body
+        {
+            background-image: url("images/WDF_1926448.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'oswald';
+        }
+        .nav-pills{
+            margin-top:10px;
+            background-color:white;
+            border-radius: 4px;
+            font-size: medium;
+
+
+        }
+        .hovereffect {
+            width:100%;
+            height:100%;
+            float:left;
+            overflow:hidden;
+            position:relative;
+            text-align:center;
+            cursor:default;
+            border: 1px solid white;
+        }
+
+        .hovereffect .overlay {
+            width:100%;
+            height:100%;
+            position:absolute;
+            overflow:hidden;
+            top:0;
+            left:0;
+            opacity:0;
+            background-color:rgba(0,0,0,0.5);
+            -webkit-transition:all .4s ease-in-out;
+            transition:all .4s ease-in-out
+        }
+
+        .hovereffect img {
+            display:block;
+            position:relative;
+            -webkit-transition:all .4s linear;
+            transition:all .4s linear;
+            width: 600px;
+            height: 400px;
+
+        }
+
+        .hovereffect h2 {
+            text-transform:uppercase;
+            color:#fff;
+            text-align:center;
+            position:relative;
+            font-size:17px;
+            background:rgba(0,0,0,0.6);
+            -webkit-transform:translatey(-100px);
+            -ms-transform:translatey(-100px);
+            transform:translatey(-100px);
+            -webkit-transition:all .2s ease-in-out;
+            transition:all .2s ease-in-out;
+            padding:10px;
+        }
+
+        .hovereffect a.info {
+            text-decoration:none;
+            display:inline-block;
+            text-transform:uppercase;
+            color:#fff;
+            border:1px solid #fff;
+            background-color:transparent;
+            opacity:0;
+            filter:alpha(opacity=0);
+            -webkit-transition:all .2s ease-in-out;
+            transition:all .2s ease-in-out;
+            margin:50px 0 0;
+            padding:7px 14px;
+        }
+
+        .hovereffect a.info:hover {
+            box-shadow:0 0 5px #fff;
+        }
+
+        .hovereffect:hover img {
+            -ms-transform:scale(1.2);
+            -webkit-transform:scale(1.2);
+            transform:scale(1.2);
+        }
+
+        .hovereffect:hover .overlay {
+            opacity:1;
+            filter:alpha(opacity=100);
+        }
+
+        .hovereffect:hover h2,.hovereffect:hover a.info {
+            opacity:1;
+            filter:alpha(opacity=100);
+            -ms-transform:translatey(0);
+            -webkit-transform:translatey(0);
+            transform:translatey(0);
+        }
+
+        .hovereffect:hover a.info {
+            -webkit-transition-delay:.2s;
+            transition-delay:.2s;
+        }
+
+
+        .tab-content{
+            background-color:#303136;
+            color:#fff;
+            padding:5px
+        }
+        .nav-tabs > li > a{
+            border: medium none;
+            background-color: black;
+        }
+        .nav-tabs > li > a:hover{
+            background-color: black !important;
+            border: medium none;
+            border-radius: 4px;
+            color:#fff;
+        }
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 100%;
+            margin: auto;
+            min-height: 425px;
+            max-height: 425px;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-brand {
+            color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default {
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: rgba(248, 248, 248, 1);
+            border-width: 2px;
+            border-radius: 4px;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+            color: rgba(0, 0, 0, 1);
+            background-color: rgba(255, 255, 255, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+            color: rgba(255, 245, 245, 1);
+            background-color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle {
+            border-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+            background-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+            background-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+            background-color: #f8f8f8;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+        footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
+        .footerleft { margin-top:50px; padding:0 36px; }
+        .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+
+        .footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
+        .footerleft p i { width:20px; color:#999;}
+
+
+        .paddingtop-bottom {  margin-top:50px;}
+        .footer-ul { list-style-type:none;  padding-left:0px; margin-left:2px;}
+        .footer-ul li { line-height:29px; font-size:12px;}
+        .footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
+        .footer-ul i { margin-right:10px;}
+        .footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
+
+        .social:hover {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+        }
+
+
+
+
+        .icon-ul { list-style-type:none !important; margin:0px; padding:0px;}
+        .icon-ul li { line-height:75px; width:100%; float:left;}
+        .icon { float:left; margin-right:5px;}
+
+
+        .copyright { min-height:40px; background-color:#000000;}
+        .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
+        .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
+        .post p { font-size:12px; color:#FFF; line-height:20px;}
+        .post p span { display:block; color:#8f8f8f;}
+        .bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
+        .bottom_ul li { float:left; line-height:40px;}
+        .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
+        .bottom_ul li a { color:#FFF;  font-size:12px;}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+
+    <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+            <div class="navbar-header"><a class="navbar-brand" href="index.html">Home</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+            </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-left">
+
+                <li><a href="ShowTimes2.html"><b>Show Times</b></a></li>
+                <li><a href="videos.html"><b>Trailers</b></a></li>
+                <li><a href="About%20us.html"><b>About</b></a></li>
+                <li><a href="Form.html"><b>Contact us</b></a></li>
+                <li><a href="#comingsoon"><b>Coming soon</b></a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+            </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img class="img-rounded" src="images/Kung-Fu-Panda-3-Furious-Five-Po.jpg" alt="Chania" width="460" height="50">
+                <div class="carousel-caption">
+                    <h3>KangFu Panda</h3>
+                    <p>Releasing this November.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="img-rounded" src="images/Ice-Age-4-Continental-Drift-1024x526.jpg" alt="Chania" width="460" height="345">
+				<div class="carousel-caption">
+                    <h3>Ice Age 4</h3>
+                    <p>Releasing this November.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="img-rounded" src="images/the-lorax-banner.jpg" alt="Flower" width="460" height="345">
+				<div class="carousel-caption">
+                    <h3>The Lorax</h3>
+                    <p>Releasing this November.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="img-rounded" src="images/Frozen-banner-from-Disney-Store-frozen-35561624-950-340.gif" alt="Flower" width="460" height="345">				<div class="carousel-caption">
+                    <h3>Frozen</h3>
+                    <p>Releasing this November.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+<ul class="nav nav-pills">
+    <li class="active"><a data-toggle="tab" href="#menu4">Latest Movies</a></li>
+    <li><a data-toggle="tab" href="#menu1">Popular Movies</a></li>
+    <li><a data-toggle="tab" href="#menu2">Featured Movies</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="menu4" class="tab-pane fade in active">
+        <div class="row">
+            <div class="col-sm-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive"  src="images/127-hours-movie-poster.jpg"  alt="">
+                        <div class="overlay">
+                            <h2>127 Hours</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-sm-3">
+
+
+                    <div class="hovereffect">
+                        <img class="img-responsive"  src="images/avatarposter.jpg"  alt="" w>
+                        <div class="overlay">
+                            <h2>avatar</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="col-sm-3">
+                <div class="hovereffect">
+                    <img class="img-responsive"  src="images/angels-demons-poster2.jpg"  alt="">
+                    <div class="overlay">
+                        <h2>anges and demons</h2>
+                        <a class="info" href="#">Read More..</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="hovereffect">
+                    <img class="img-responsive"  src="images/Bane-new-dark-knight-rises-character-posters-2012-latest-movie-posters1.jpg"  alt="">
+                    <div class="overlay">
+                        <h2>The dark night rises</h2>
+                        <a class="info" href="#">Read More..</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+        <div id="home" class="tab-pane fade in active">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/Epic-TeaserMain-drop.jpg"  alt="">
+                        <div class="overlay">
+                            <h2>Epic</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+
+
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/dragon-blade-new-poster-1.jpg"  alt="" w>
+                        <div class="overlay">
+                            <h2>Dragon Blade</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/madagascar.jpg"  alt="">
+                        <div class="overlay">
+                            <h2>Madagascar</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/madyax.jpg"  alt="">
+                        <div class="overlay">
+                            <h2>Mad yax</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+        <div id="home" class="tab-pane fade in active">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/Lion-King-posters-animated-movies-14801412-300-395.jpg"  alt="">
+                        <div class="overlay">
+                            <h2>Lion king </h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+
+
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/Mononoke-hime_poster_goldposter_com_1.jpg@0o_0l_400w_70q.jpg"  alt="" w>
+                        <div class="overlay">
+                            <h2>mononoke</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/puss-in-boots-poster-2.jpeg"  alt="">
+                        <div class="overlay">
+                            <h2>puss in boots</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="images/the last stand.jpg" alt="">
+                        <div class="overlay">
+                            <h2>the last stand</h2>
+                            <a class="info" href="#">Read More..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+        <h3>Menu 3</h3>
+        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+</div>
+
+    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!--footer start from here-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footerleft ">
+                    <div class="logofooter"> Logo</div>
+                    <p> Online ticket reservation cenima </p>
+                    <p><i class="fa fa-map-pin"></i> 210, Blue Area sec 9, Islamabad -        110085, Pakistan</p>
+                    <p><i class="fa fa-phone"></i> Phone (Pakistan) : +92 9999 878 398</p>
+                    <p><i class="fa fa-envelope"></i> E-mail : info@webCenima.com</p>
+
+                </div>
+                <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">GENERAL LINKS</h6>
+                    <ul class="footer-ul">
+					<li><a href="index.html">Home</a></li>
+                        <li><a href="ShowTimes2.html">Show Times</a></li>
+                <li><a href="Trailer.html">Trailers</a></li>
+                <li><a href="About%20us.html">About</a></li>
+                <li><a href="Form.html">Contact us</a></li>
+                <li><a href="#comingsoon">Coming soon</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">Movie Reviews</h6>
+                    <div class="post">
+                        <p>Disney's latest fairy tale, Moana, is familiar from past Disney films<span>August 3,2015</span></p>
+                        <p>Disney's latest fairy tale, Moana, is familiar from past Disney films<span>Novmeber 3,2015</span></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer start from here-->
+
+    <div class="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p>© 2016 - All Rights with Webenlance</p>
+            </div>
+            <div class="col-md-6">
+                <ul class="bottom_ul">
+                    <li><a href="index.html">Home</a></li>
+                        <li><a href="ShowTimes2.html">Show Times</a></li>
+                <li><a href="Trailer.html">Trailers</a></li>
+                <li><a href="About%20us.html">About</a></li>
+                <li><a href="Form.html">Contact us</a></li>
+                <li><a href="#comingsoon">Coming soon</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

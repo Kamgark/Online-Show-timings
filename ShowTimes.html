@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Home</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+            <style>
+                body
+                {
+                    background-image: url("images/WDF_1926448.jpg");
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: center;
+                    font-family: 'oswald';
+                }
+                table td{
+                    border-collapse:collapse;
+                    align-content: center;
+                    background-color: #222222;
+                    padding: 18px;
+                    color: white; }
+
+                .nav-pills{
+                    margin-top:10px;
+                    background-color:white;
+                    border-radius: 4px;
+                    font-size: medium;
+
+
+                }
+
+
+                .tab-content{
+                    background-color:#303136;
+                    color:#fff;
+                    padding:5px
+                }
+                .nav-tabs > li > a{
+                    border: medium none;
+                    background-color: black;
+                }
+                .nav-tabs > li > a:hover{
+                    background-color: black !important;
+                    border: medium none;
+                    border-radius: 4px;
+                    color:#fff;
+                }
+                .carousel-inner > .item > img,
+                .carousel-inner > .item > a > img {
+                    width: 100%;
+                    margin: auto;
+                    min-height: 425px;
+                    max-height: 425px;
+                }
+                #custom-bootstrap-menu.navbar-default .navbar-brand {
+                    color: rgba(255, 165, 0, 1);
+                }
+                #custom-bootstrap-menu.navbar-default {
+                    margin-top: 20px;
+                    font-size: 16px;
+                    background-color: rgba(248, 248, 248, 1);
+                    border-width: 2px;
+                    border-radius: 4px;
+                }
+                #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+                    color: rgba(0, 0, 0, 1);
+                    background-color: rgba(255, 255, 255, 1);
+                }
+                #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+                #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+                    color: rgba(255, 245, 245, 1);
+                    background-color: rgba(255, 165, 0, 1);
+                }
+                #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+                #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+                #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+                    color: rgba(255, 255, 255, 1);
+                    background-color: rgba(255, 165, 0, 1);
+                }
+                #custom-bootstrap-menu.navbar-default .navbar-toggle {
+                    border-color: #ffa500;
+                }
+                #custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+                #custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+                    background-color: #ffa500;
+                }
+                #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+                    background-color: #ffa500;
+                }
+                #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+                #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+                    background-color: #f8f8f8;
+                }
+
+                .footer-distributed{
+                    background-color: #292c2f;
+                    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+                    box-sizing: border-box;
+                    width: 100%;
+                    text-align: left;
+                    font: bold 16px sans-serif;
+
+                    padding: 25px 20px;
+                    margin-top: 15px;
+                }
+
+                .footer-distributed .footer-left,
+                .footer-distributed .footer-center,
+                .footer-distributed .footer-right{
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                /* Footer left */
+
+                .footer-distributed .footer-left{
+                    width: 40%;
+                }
+
+                /* The company logo */
+
+                .footer-distributed h3{
+                    color:  #ffffff;
+                    font: normal 36px 'Cookie', cursive;
+                    margin: 0;
+                }
+
+                .footer-distributed h3 span{
+                    color:  #5383d3;
+                }
+
+                /* Footer links */
+
+                .footer-distributed .footer-links{
+                    color:  #ffffff;
+                    margin: 20px 0 12px;
+                    padding: 0;
+                }
+
+                .footer-distributed .footer-links a{
+                    display:inline-block;
+                    line-height: 1.8;
+                    text-decoration: none;
+                    color:  inherit;
+                }
+
+                .footer-distributed .footer-company-name{
+                    color:  #8f9296;
+                    font-size: 14px;
+                    font-weight: normal;
+                    margin: 0;
+                }
+
+                /* Footer Center */
+
+                .footer-distributed .footer-center{
+                    width: 35%;
+                }
+
+                .footer-distributed .footer-center i{
+                    background-color:  #33383b;
+                    color: #ffffff;
+                    font-size: 25px;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 42px;
+                    margin: 10px 15px;
+                    vertical-align: middle;
+                }
+
+                .footer-distributed .footer-center i.fa-envelope{
+                    font-size: 17px;
+                    line-height: 38px;
+                }
+
+                .footer-distributed .footer-center p{
+                    display: inline-block;
+                    color: #ffffff;
+                    vertical-align: middle;
+                    margin:0;
+                }
+
+                .footer-distributed .footer-center p span{
+                    display:block;
+                    font-weight: normal;
+                    font-size:14px;
+                    line-height:2;
+                }
+
+                .footer-distributed .footer-center p a{
+                    color:  #5383d3;
+                    text-decoration: none;;
+                }
+
+
+                /* Footer Right */
+
+                .footer-distributed .footer-right{
+                    width: 20%;
+                }
+
+                .footer-distributed .footer-company-about{
+                    line-height: 20px;
+                    color:  #92999f;
+                    font-size: 13px;
+                    font-weight: normal;
+                    margin: 0;
+                }
+
+                .footer-distributed .footer-company-about span{
+                    display: block;
+                    color:  #ffffff;
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+
+                .footer-distributed .footer-icons{
+                    margin-top: 25px;
+                }
+
+                .footer-distributed .footer-icons a{
+                    display: inline-block;
+                    width: 35px;
+                    height: 35px;
+                    cursor: pointer;
+                    background-color:  #33383b;
+                    border-radius: 2px;
+
+                    font-size: 20px;
+                    color: #ffffff;
+                    text-align: center;
+                    line-height: 35px;
+
+                    margin-right: 3px;
+                    margin-bottom: 5px;
+                }
+
+                .clear {
+                    clear: both;
+                }
+                .hover01 figure img {
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                    -webkit-transition: .3s ease-in-out;
+                    transition: .3s ease-in-out;
+                }
+                .hover01 figure:hover img {
+                    -webkit-transform: scale(1.2);
+                    transform: scale(1.2);
+                }
+                .two{
+                    color:dodgerblue;
+                }
+                .three{
+                    color:red;
+                }
+                .contactForm{
+                    font-size:12px;
+                    width: 85%;
+
+                }
+
+                .contactForm .label{
+                    width:140px;
+                    line-height:30px;
+                    float:left;
+                    color: white;
+                    font-size: medium;
+
+                }
+
+                .contactForm input[type=text], .contactForm select, .contactForm textarea{
+                    padding:6px;
+                    color:#727272;
+                    margin-right:10px;
+                    border-collapse:collapse;
+                    border:0px;
+                }
+
+                .contactForm input.fnlname{
+                    width:190px;
+                }
+
+                .contactForm input.input{
+                    width:265px;
+                }
+
+                .contactForm input.other{
+                    width:470px;
+                }
+
+                .contactForm select.f1{
+                    width:60px;
+                }
+                .contactForm select.f1 option{
+                    width:33px;
+                }
+
+                .contactForm select.f1{
+
+                    width:70px;
+                }
+
+
+            </style>
+
+
+
+        </head>
+
+
+<body>
+
+
+<div class="container">
+
+    <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html">Home</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-left">
+
+                <li><a href="ShowTimes.html"><b>Show Times</b></a></li>
+                <li><a href="Trailer.html"><b>Trailers</b></a></li>
+                <li><a href="About%20us.html"><b>About</b></a></li>
+                <li><a href="Contact.html"><b>Contact us</b></a></li>
+                <li><a href="#comingsoon"><b>Coming soon</b></a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div >
+        <h3 style="margin-bottom: 1px;color: white;width: 50% ;margin-left: 3px">SHOWTIMES FOR SUNDAY 23 OCT, 2016</h3>
+        <table style="float: left">
+            <tr>
+                <td colspan="3" style="text-align: center">Cenima 1</td>
+            </tr>
+            <tr>
+                <td>Show Times</td>
+                <td>Format</td>
+                <td>Movies</td>
+            </tr>
+
+            <tr>
+                <td>12:30 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Actor In Law</td>
+
+            </tr>
+            <tr>
+                <td>03:00 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Actor In Law</td>
+
+            </tr>
+            <tr>
+                <td>05:30 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Actor In Law</td>
+
+            </tr>
+            <tr>
+                <td>08:00 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Actor In Law</td>
+
+            </tr>
+        </table>
+
+        <table style="float: left">
+            <tr>
+                <td colspan="3" style="text-align: center">Cenima 2</td>
+            </tr>
+            <tr>
+                <td>Show Times</td>
+                <td>Format</td>
+                <td>Movies</td>
+            </tr>
+
+            <tr>
+                <td>12:30 PM</td>
+                <td>            <span class="three">3D</span>
+                </td>
+                <td>Stork</td>
+
+            </tr>
+            <tr>
+                <td>03:00 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Maalik</td>
+
+            </tr>
+            <tr>
+                <td>05:30 PM</td>
+                <td> <span class="three">3D</span>
+                </td>
+                <td>Stork</td>
+
+            </tr>
+            <tr>
+                <td>08:00 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Malik</td>
+
+            </tr>
+        </table>
+
+
+
+
+        <table style="float: left">
+            <tr>
+                <td colspan="3" style="text-align: center">Cenima 3</td>
+            </tr>
+
+            <tr>
+                <td>Show Times</td>
+                <td>Format</td>
+                <td>Movies</td>
+            </tr>
+            <tr>
+                <td >12:15 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Ouija: Origin of evil</td>
+            </tr>
+            <tr>
+                <td>02:30 PM</td>
+                <td >            <span class="two">2D</span>
+                </td>
+                <td>The Accountant</td>
+            </tr>
+            <tr>
+                <td>05:00 PM</td>
+                <td ><span class="two">2D</span>
+                </td>
+                <td>Ouija: Origin of Evil</td>
+            </tr>
+            <tr>
+                <td >07:15 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>The Accountant</td>
+            </tr>
+
+
+
+        </table>
+
+        <table style="float: left">
+            <h3 style="margin-bottom: 1px;color: white;width: 50% ;margin-left: 3px">SHOWTIMES FOR MON 28 nov TO THUR 30 nov, 2016</h3>
+            <tr>
+                <td colspan="3" style="text-align: center">Cenima 1</td>
+            </tr>
+            <tr>
+                <td>Show Times</td>
+                <td>Format</td>
+                <td>Movies</td>
+            </tr>
+
+            <tr>
+                <td>12:30 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Actor In Law</td>
+
+            </tr>
+            <tr>
+                <td>03:00 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Actor In Law</td>
+
+            </tr>
+            <tr>
+                <td>05:30 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Actor In Law</td>
+
+            </tr>
+            <tr>
+                <td>08:00 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Actor In Law</td>
+
+            </tr>
+        </table>
+
+        <table style="float: left">
+            <tr>
+                <td colspan="3" style="text-align: center">Cenima 2</td>
+            </tr>
+            <tr>
+                <td>Show Times</td>
+                <td>Format</td>
+                <td>Movies</td>
+            </tr>
+
+            <tr>
+                <td>12:30 PM</td>
+                <td>            <span class="three">3D</span>
+                </td>
+                <td>Stork</td>
+
+            </tr>
+            <tr>
+                <td>03:00 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Maalik</td>
+
+            </tr>
+            <tr>
+                <td>05:30 PM</td>
+                <td> <span class="three">3D</span>
+                </td>
+                <td>Stork</td>
+
+            </tr>
+            <tr>
+                <td>08:00 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Malik</td>
+
+            </tr>
+        </table>
+
+
+        <table style="float: left">
+            <tr>
+                <td colspan="3" style="text-align: center">Cenima </td>
+            </tr>
+
+            <tr>
+                <td>Show Times</td>
+                <td>Format</td>
+                <td>Movies</td>
+            </tr>
+            <tr>
+                <td >12:15 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>Ouija: Origin of evil</td>
+            </tr>
+            <tr>
+                <td>02:30 PM</td>
+                <td >            <span class="two">2D</span>
+                </td>
+                <td>The Accountant</td>
+            </tr>
+            <tr>
+                <td>05:00 PM</td>
+                <td ><span class="two">2D</span>
+                </td>
+                <td>Ouija: Origin of Evil</td>
+            </tr>
+            <tr>
+                <td >07:15 PM</td>
+                <td>            <span class="two">2D</span>
+                </td>
+                <td>The Accountant</td>
+            </tr>
+
+
+        </table>
+    </div>
+
+
+</div>
+
+
+<!--footer start from here-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 footerleft ">
+                <div class="logofooter"> Logo</div>
+                <p> Online ticket reservation cenima </p>
+                <p><i class="fa fa-map-pin"></i> 210, Blue Area sec 9, Islamabad -        110085, Pakistan</p>
+                <p><i class="fa fa-phone"></i> Phone (Pakistan) : +92 9999 878 398</p>
+                <p><i class="fa fa-envelope"></i> E-mail : info@webCenima.com</p>
+
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">GENERAL LINKS</h6>
+                <ul class="footer-ul">
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#"> Privacy Policy</a></li>
+                    <li><a href="#"> Terms & Conditions</a></li>
+                    <li><a href="#"> Login</a></li>
+                    <li><a href="#"> Contact Us</a></li>
+                    <li><a href="#"> About Us</a></li>
+                    <li><a href="#"> Frequently Ask Questions</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7">Movie Reviews</h6>
+                <div class="post">
+                    <p>Disney's latest fairy tale, Moana, is familiar from past Disney films<span>August 3,2015</span></p>
+                    <p>Disney's latest fairy tale, Moana, is familiar from past Disney films<span>Novmeber 3,2015</span></p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer start from here-->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-6">
+            <p>© 2016 - All Rights with Webenlance</p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+                <li><a href="#">webenlance.com</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Faq's</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Site Map</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+</body>
+</html>

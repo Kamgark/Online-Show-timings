@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+
+
+        body
+        {
+             background-image: url("images/WDF_1926448.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'oswald';
+        }
+
+
+
+
+
+
+        .nav-tabs > li > a{
+            border: medium none;
+            background-color: black;
+        }
+        .nav-tabs > li > a:hover{
+            background-color: black !important;
+            border: medium none;
+            border-radius: 4px;
+            color:#fff;
+        }
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 100%;
+            margin: auto;
+            min-height: 425px;
+            max-height: 425px;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-brand {
+            color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default {
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: rgba(248, 248, 248, 1);
+            border-width: 2px;
+            border-radius: 4px;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+            color: rgba(0, 0, 0, 1);
+            background-color: rgba(255, 255, 255, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+            color: rgba(255, 245, 245, 1);
+            background-color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle {
+            border-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+            background-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+            background-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+            background-color: #f8f8f8;
+        }
+
+       
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+   
+
+
+        <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+            <fieldset>
+
+                
+                <legend>Form Validation </legend>
+
+             
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input  name="first_name" placeholder="First Name" class="form-control"  type="text"   pattern="[a-zA-Z]+" required >
+                        </div>
+                    </div>
+                </div>
+
+          
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="last_name" placeholder="Last Name" class="form-control"  type="text" pattern="[a-zA-Z]+" required >
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <label class="col-md-4 control-label">CNIC</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input  name="i-e 12345-1234567-1" placeholder="i-e 12345-1234567-1" class="form-control"  type="text" maxlength="15"  pattern="\d{5}-\d{7}-\d{1}" required >
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+
+          
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="email" placeholder="E-Mail Address" class="form-control"  type="text" pattern="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,3}$" required>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Phone #</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="phone" placeholder="i-e 333-1234567" class="form-control" type="digit" pattern="\d{3}-\d{7}" required >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Address</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="address" placeholder="Address" class="form-control" type="text" required >
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">City</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="city" placeholder="city" class="form-control"  type="text" pattern="[a-zA-Z0-9]+" required >
+                        </div>
+                    </div>
+                </div>
+
+         
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Districts</label>
+                    <div class="col-md-4 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select name="state" class="form-control selectpicker" required >
+                                <option value=" " >Please select your City</option>
+                                <option>Karachi</option>
+                                <option>Lahore</option>
+                                <option >Faislabad</option>
+                                <option >Rawalpindi</option>
+                                <option >Multan</option>
+                                <option >Hyderabad</option>
+                                <option >Gujrawala</option>
+                                <option >Peshawar</option>
+                                <option >Quetta</option>
+                                <option> Islamabad</option>
+                                <option >Sargodha</option>
+                                <option >Sialkot</option>
+                                <option >Bahawalpur</option>
+                                <option >Sukkur</option>
+                                <option >Jhang</option>
+                                <option >Shekhupura</option>
+                                <option> Mardan</option>
+                                <option >Gujrat</option>
+                                <option >Larkana</option>
+                                <option>Kasur</option>
+                                <option >Rahim yar khan</option>
+                                <option> Sahiwal</option>
+                                <option >Okara</option>
+                                <option >Wah Cantt</option>
+                                <option>Dhera ghazi khan</option>
+                                <option>Mingora</option>
+                                <option>Mirpur khas</option>
+                                <option>Chiniot</option>
+                                <option>Nawabshah</option>
+                                <option>Jhelum</option>
+                                <option>kohat</option>
+                                <option>Abbottabad</option>
+                                <option>Nowshera</option>
+                                <option>Charsada</option>
+                                <option>Swabi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Zip Code</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="zip" placeholder="Zip Code" class="form-control"  type="text" pattern="[0-9]{5}" >
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Gender</label>
+                    <div class="col-md-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender" value="male" required/> Male
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender" value="femal" /> Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Project Description</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <textarea class="form-control" name="comment" placeholder="Project Description" required ></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+                
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+
+
+
+
+
+
+    
+   
+   
+</div>
+</div>
+
+</body>
+</html>
+

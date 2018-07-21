@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body
+        {
+            background-image: url("images/WDF_1926448.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'oswald';
+        }
+        .nav-pills{
+            margin-top:10px;
+            background-color:white;
+            border-radius: 4px;
+            font-size: medium;
+
+
+        }
+        table td{
+            border-collapse:collapse;
+            align-content: center;
+            background-color: #222222;
+            padding: 18px;
+            color: white;
+        }
+
+        .row{
+            margin-bottom: 10px;
+        }
+
+
+
+
+        .nav-tabs > li > a{
+            border: medium none;
+            background-color: black;
+        }
+        .nav-tabs > li > a:hover{
+            background-color: black !important;
+            border: medium none;
+            border-radius: 4px;
+            color:#fff;
+        }
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 100%;
+            margin: auto;
+            min-height: 425px;
+            max-height: 425px;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-brand {
+            color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default {
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: rgba(248, 248, 248, 1);
+            border-width: 2px;
+            border-radius: 4px;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+            color: rgba(0, 0, 0, 1);
+            background-color: rgba(255, 255, 255, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+            color: rgba(255, 245, 245, 1);
+            background-color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(255, 165, 0, 1);
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle {
+            border-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+            background-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+            background-color: #ffa500;
+        }
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+        #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+            background-color: #f8f8f8;
+        }
+
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+        footer {
+            margin-top: 20px;
+            background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
+        .footerleft { margin-top:50px; padding:0 36px; }
+        .logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+
+        .footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
+        .footerleft p i { width:20px; color:#999;}
+
+
+        .paddingtop-bottom {  margin-top:50px;}
+        .footer-ul { list-style-type:none;  padding-left:0px; margin-left:2px;}
+        .footer-ul li { line-height:29px; font-size:12px;}
+        .footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
+        .footer-ul i { margin-right:10px;}
+        .footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
+
+        .social:hover {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+        }
+
+
+
+
+        .icon-ul { list-style-type:none !important; margin:0px; padding:0px;}
+        .icon-ul li { line-height:75px; width:100%; float:left;}
+        .icon { float:left; margin-right:5px;}
+
+
+        .copyright { min-height:40px; background-color:#000000;}
+        .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
+        .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
+        .post p { font-size:12px; color:#FFF; line-height:20px;}
+        .post p span { display:block; color:#8f8f8f;}
+        .bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
+        .bottom_ul li { float:left; line-height:40px;}
+        .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
+        .bottom_ul li a { color:#FFF;  font-size:12px;}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+        <div class="navbar-header"><a class="navbar-brand"  href="index.html">Home</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-left">
+
+               <li><a href="ShowTimes2.html"><b>Show Times</b></a></li>
+                <li><a href="videos.html"><b>Trailers</b></a></li>
+                <li><a href="About%20us.html"><b>About</b></a></li>
+                <li><a href="Form.html"><b>Contact us</b></a></li>
+                <li><a href="#comingsoon"><b>Coming soon</b></a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+            <iframe width="352" height="315" src="https://www.youtube.com/embed/BJVkoq_wK80" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-sm-4">
+            <iframe width="352" height="315" src="https://www.youtube.com/embed/qZefKaANfe0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-sm-4">
+            <iframe width="355" height="315" src="https://www.youtube.com/embed/F4gJsKZvqE4" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <iframe width="352" height="315" src="https://www.youtube.com/embed/Tf4sa0BVJVw" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-sm-4">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="352" height="315" src="https://www.youtube.com/embed/mUL2C0_FTIo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <iframe width="355" height="315" src="https://www.youtube.com/embed/VwEq3kaSU6E" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!--footer start from here-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footerleft ">
+                    <div class="logofooter"> Logo</div>
+                    <p> Online ticket reservation cenima </p>
+                    <p><i class="fa fa-map-pin"></i> 210, Blue Area sec 9, Islamabad -        110085, Pakistan</p>
+                    <p><i class="fa fa-phone"></i> Phone (Pakistan) : +92 9999 878 398</p>
+                    <p><i class="fa fa-envelope"></i> E-mail : info@webCenima.com</p>
+
+                </div>
+                <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">GENERAL LINKS</h6>
+                    <ul class="footer-ul">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ShowTimes2.html">Show Times</a></li>
+                <li><a href="Trailer.html">Trailers</a></li>
+                <li><a href="About%20us.html">About</a></li>
+                <li><a href="Form.html">Contact us</a></li>
+                <li><a href="#comingsoon">Coming soon</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                    <h6 class="heading7">Movie Reviews</h6>
+                    <div class="post">
+                        <p>Disney's latest fairy tale, Moana, is familiar from past Disney films<span>August 3,2015</span></p>
+                        <p>Disney's latest fairy tale, Moana, is familiar from past Disney films<span>Novmeber 3,2015</span></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer start from here-->
+
+    <div class="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p>© 2016 - All Rights with Webenlance</p>
+            </div>
+            <div class="col-md-6">
+                <ul class="bottom_ul">
+                     <li><a href="index.html">Home</a></li>
+                        <li><a href="ShowTimes2.html">Show Times</a></li>
+                <li><a href="Trailer.html">Trailers</a></li>
+                <li><a href="About%20us.html">About</a></li>
+                <li><a href="Form.html">Contact us</a></li>
+                <li><a href="#comingsoon">Coming soon</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+
